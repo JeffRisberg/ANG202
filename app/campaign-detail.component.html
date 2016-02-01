@@ -1,0 +1,12 @@
+<div *ngIf="campaign">
+    <h2>Name: {{campaign.name}}</h2>
+
+    <div><label>id: </label>{{campaign.id}}</div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="campaign.name" placeholder="name"/>
+        <br/>
+        <label>enabled: </label>
+        <input type="checkbox" [(ngModel)]="campaign.enabled" placeholder="enabled"/>
+    </div>
+</div>
