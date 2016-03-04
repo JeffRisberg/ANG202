@@ -1,9 +1,17 @@
-<h1>{{title}}</h1>
-<h2>Campaign List</h2>
-<div class="campaigns">
-    <div *ngFor="#campaign of campaigns"
+<h2>{{title}}</h2>
+
+<table class="campaigns" style="width: 400px;" border="1">
+    <tr *ngFor="#campaign of campaigns"
         [class.selected]="campaign === selectedCampaign"
         (click)="onSelect(campaign)">
-        <span class="badge">{{campaign.id}}</span> {{campaign.name}} Enabled: {{ campaign.enabled }}
-    </div>
-</div>
+        <td>
+            {{campaign.id}}
+        </td>
+        <td>
+            {{campaign.name}}
+        </td>
+        <td>
+            Enabled: {{campaign.enabled}}
+        </td>
+    </tr>
+</table>
