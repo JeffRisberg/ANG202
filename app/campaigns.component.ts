@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import { Router } from 'angular2/router';
 
 import {Campaign} from './campaign';
 import {CampaignService} from './campaign.service';
@@ -12,10 +12,13 @@ import {CampaignService} from './campaign.service';
 
 export class CampaignsComponent implements OnInit {
     public title = 'Campaign Management';
+
     public campaigns:Campaign[];
+
     public selectedCampaign:Campaign;
 
-    constructor(private _campaignService:CampaignService) {
+    constructor(private _router:Router,
+                private _campaignService:CampaignService) {
     }
 
     getCampaigns() {
@@ -30,5 +33,9 @@ export class CampaignsComponent implements OnInit {
 
     onSelect(campaign:Campaign) {
         this.selectedCampaign = campaign;
+    }
+
+    gotoDetail() {
+        this._router.navigate(['CampaignDetail', {id: this.selectedCampaign.id}]);
     }
 }

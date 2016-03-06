@@ -14,4 +14,10 @@ export class CampaignService {
                 setTimeout(()=>resolve(CAMPAIGNS), 2000) // 2 seconds
         );
     }
+
+    getCampaign(id: number) {
+        return Promise.resolve(CAMPAIGNS).then(
+                campaigns => campaigns.filter(campaign => campaign.id === id)[0]
+        );
+    }
 }

@@ -1,6 +1,6 @@
-<h2>{{title}}</h2>
+<h3>Campaign List</h3>
 
-<table class="campaigns" style="width: 400px;" border="1">
+<table class="table" style="width: 400px;">
     <tr *ngFor="#campaign of campaigns"
         [class.selected]="campaign === selectedCampaign"
         (click)="onSelect(campaign)">
@@ -15,3 +15,10 @@
         </td>
     </tr>
 </table>
+
+<div *ngIf="selectedCampaign">
+    <h2>
+        {{selectedCampaign.name | uppercase}} is active for edit
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>
