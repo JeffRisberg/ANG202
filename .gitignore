@@ -9,6 +9,7 @@
 
 # dependencies
 /node_modules
+/typings
 /bower_components
 
 # misc
