@@ -1,7 +1,7 @@
 <H2>Dashboard</H2>
 
 <div class="grid grid-pad">
-    <div *ngFor="#campaign of campaigns">
+    <div *ngFor="#campaign of campaigns" (click)="gotoDetail(campaign)">
         <h4>{{campaign.name}}</h4>
     </div>
 </div>

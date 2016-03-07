@@ -11,7 +11,7 @@ import {CampaignDetailComponent} from './campaign-detail.component';
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
-    stylesUrls: ['app/app.component.css'],
+    styleUrls: ['app/app.component.css'],
     providers: [CampaignService],
     directives: [ROUTER_DIRECTIVES]
 })
