@@ -6,11 +6,11 @@ import {CampaignService} from './campaign.service';
 
 @Component({
     selector: 'my-campaigns',
-    templateUrl: 'app/campaigns.component.html',
+    templateUrl: 'app/campaigns-byName.component.html',
     styleUrls: ['app/campaigns.component.css']
 })
 
-export class CampaignsComponent implements OnInit {
+export class CampaignsByNameComponent implements OnInit {
 
     public campaigns:Campaign[];
 

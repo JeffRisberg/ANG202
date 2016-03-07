@@ -1,24 +1,3 @@
-<h3>Campaign List</h3>
+<h3>Campaigns</h3>
 
-<table class="table" style="width: 400px;">
-    <tr *ngFor="#campaign of campaigns"
-        [class.selected]="campaign === selectedCampaign"
-        (click)="onSelect(campaign)">
-        <td>
-            {{campaign.id}}
-        </td>
-        <td>
-            {{campaign.name}}
-        </td>
-        <td>
-            Enabled: {{campaign.enabled}}
-        </td>
-    </tr>
-</table>
-
-<div *ngIf="selectedCampaign">
-    <h2>
-        {{selectedCampaign.name | uppercase}} is active for edit
-    </h2>
-    <button (click)="gotoDetail()">View Details</button>
-</div>
+<router-outlet></router-outlet>

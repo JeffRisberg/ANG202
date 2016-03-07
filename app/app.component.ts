@@ -6,6 +6,8 @@ import {CampaignService} from './campaign.service';
 
 import {DashboardComponent} from './dashboard.component';
 import {CampaignsComponent} from './campaigns.component';
+import {CampaignsByNameComponent} from './campaigns-byName.component';
+import {CampaignsByTypeComponent} from './campaigns-byType.component';
 import {CampaignDetailComponent} from './campaign-detail.component';
 
 @Component({
@@ -18,7 +20,9 @@ import {CampaignDetailComponent} from './campaign-detail.component';
 
 @RouteConfig([
     {path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true},
-    {path: '/campaigns', name: 'Campaigns', component: CampaignsComponent},
+    {path: '/campaigns/...', name: 'Campaigns', component: CampaignsComponent},
+    {path: 'byName', name: 'ByName', component: CampaignsByNameComponent},
+    {path: 'byType', name: 'ByType', component: CampaignsByTypeComponent},
     {path: '/detail/:id', name: 'CampaignDetail', component: CampaignDetailComponent
     }
 ])

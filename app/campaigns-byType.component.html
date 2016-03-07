@@ -1,0 +1,37 @@
+<h4>By Type</h4>
+
+<table class="table" style="width: 500px;">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Enabled</th>
+        <th>Rotation Type</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="#campaign of campaigns"
+        [class.selected]="campaign === selectedCampaign"
+        (click)="onSelect(campaign)">
+        <td>
+            {{campaign.id}}
+        </td>
+        <td>
+            {{campaign.name}}
+        </td>
+        <td>
+            {{campaign.enabled}}
+        </td>
+        <td>
+            {{campaign.rotationType}}
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div *ngIf="selectedCampaign">
+    <h2>
+        {{selectedCampaign.name | uppercase}} is active for edit
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>

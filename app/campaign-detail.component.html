@@ -3,10 +3,13 @@
 
     <div><label>id: </label>{{campaign.id}}</div>
     <div>
-        <label>name: </label>
+        <label>Name: </label>
         <input [(ngModel)]="campaign.name" placeholder="name"/>
         <br/>
-        <label>enabled: </label>
+        <label>Enabled: </label>
         <input type="checkbox" [(ngModel)]="campaign.enabled" placeholder="enabled"/>
+        <br/>
+        <label>Rotation Type: </label>
+        <input [(ngModel)]="campaign.rotationType" placeholder="rotation Type"/>
     </div>
 </div>
