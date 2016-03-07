@@ -1,40 +1,28 @@
-import {Component, OnInit} from 'angular2/core';
+import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
+import { ROUTER_DIRECTIVES, RouteConfig } from 'angular2/router';
 
 import {Campaign} from './campaign';
 import {CampaignService} from './campaign.service';
+import {CampaignsByNameComponent} from './campaigns-byName.component';
+import {CampaignsByTypeComponent} from './campaigns-byType.component';
 
 @Component({
     selector: 'my-campaigns',
     templateUrl: 'app/campaigns.component.html',
-    styleUrls: ['app/campaigns.component.css']
+    styleUrls: ['app/campaigns.component.css'],
+    directives: [ROUTER_DIRECTIVES]
 })
-
+@RouteConfig([
+    {path: '/byName', name: 'ByName', component: CampaignsByNameComponent, useAsDefault: true},
+    {path: '/byType', name: 'ByType', component: CampaignsByTypeComponent}
+])
 export class CampaignsComponent implements OnInit {
-
-    public campaigns:Campaign[];
-
-    public selectedCampaign:Campaign;
 
     constructor(private _router:Router,
                 private _campaignService:CampaignService) {
     }
 
-    getCampaigns() {
-        this._campaignService.getCampaigns().then(campaigns => {
-            this.campaigns = campaigns;
-        });
-    }
-
-    ngOnInit() {
-        this.getCampaigns();
-    }
-
-    onSelect(campaign:Campaign) {
-        this.selectedCampaign = campaign;
-    }
-
-    gotoDetail() {
-        this._router.navigate(['CampaignDetail', {id: this.selectedCampaign.id}]);
+    ngOnInit() { // this seems to be needed, or else we get a router definition error
     }
 }

@@ -1,9 +1,13 @@
 <header>
     <h2>Campaign Management</h2>
+
     <nav>
-        <a [routerLink]="['Dashboard']">Dashboard</a>
-        <a [routerLink]="['ByName']">Campaigns By Name</a>
-        <a [routerLink]="['ByType']">Campaigns By Type</a>
+        <a [class.active]="router._currentInstruction != null && router._currentInstruction.toUrlPath() == 'dashboard'"
+           [routerLink]="['Dashboard']">Dashboard</a>
+        <a [class.active]="router._currentInstruction != null && router._currentInstruction.toUrlPath() == 'campaigns/byName'"
+           [routerLink]="['Campaigns', 'ByName']">Campaigns By Name</a>
+        <a [class.active]="router._currentInstruction != null && router._currentInstruction.toUrlPath() == 'campaigns/byType'"
+           [routerLink]="['Campaigns', 'ByType']">Campaigns By Type</a>
     </nav>
 </header>
 

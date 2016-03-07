@@ -1,15 +1,14 @@
-import {Component, OnInit} from 'angular2/core';
+import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 
-import {Campaign} from './campaign';
-import {CampaignService} from './campaign.service';
+import { Campaign } from './campaign';
+import { CampaignService } from './campaign.service';
 
 @Component({
     selector: 'my-campaigns',
     templateUrl: 'app/campaigns-byType.component.html',
     styleUrls: ['app/campaigns.component.css']
 })
-
 export class CampaignsByTypeComponent implements OnInit {
 
     public campaigns:Campaign[];
