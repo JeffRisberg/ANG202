@@ -1,13 +1,13 @@
 import {Component, OnInit} from 'angular2/core';
 import {Router, Location} from 'angular2/router';
 
-import {Campaign} from './campaign';
-import {CampaignService} from './campaign.service';
+import {Campaign} from '../campaign';
+import {CampaignService} from '../campaign.service';
 
 @Component({
     selector: 'my-dashboard',
-    templateUrl: 'app/dashboard.component.html',
-    styleUrls: ['app/dashboard.component.css']
+    templateUrl: 'app/dashboard/dashboard.component.html',
+    styleUrls: ['app/dashboard/dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
 

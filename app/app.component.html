@@ -2,6 +2,7 @@
     <h2>Campaign Management</h2>
 
     <nav>
+        <!-- The expressions for class.active correct for a known bug in router.isRouteActive when using child routes -->
         <a [class.active]="router._currentInstruction != null && router._currentInstruction.toUrlPath() == 'dashboard'"
            [routerLink]="['Dashboard']">Dashboard</a>
         <a [class.active]="router._currentInstruction != null && router._currentInstruction.toUrlPath() == 'campaigns/byName'"

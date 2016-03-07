@@ -4,8 +4,8 @@ import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {Campaign} from './campaign';
 import {CampaignService} from './campaign.service';
 
-import {DashboardComponent} from './dashboard.component';
-import {CampaignsComponent} from './campaigns.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {CampaignsComponent} from './campaigns/campaigns.component';
 import {CampaignDetailComponent} from './campaign-detail.component';
 
 @Component({

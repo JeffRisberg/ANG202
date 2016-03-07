@@ -2,15 +2,15 @@ import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 import { ROUTER_DIRECTIVES, RouteConfig } from 'angular2/router';
 
-import {Campaign} from './campaign';
-import {CampaignService} from './campaign.service';
+import {Campaign} from '../campaign';
+import {CampaignService} from '../campaign.service';
 import {CampaignsByNameComponent} from './campaigns-byName.component';
 import {CampaignsByTypeComponent} from './campaigns-byType.component';
 
 @Component({
     selector: 'my-campaigns',
-    templateUrl: 'app/campaigns.component.html',
-    styleUrls: ['app/campaigns.component.css'],
+    templateUrl: 'app/campaigns/campaigns.component.html',
+    styleUrls: ['app/campaigns/campaigns.component.css'],
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
